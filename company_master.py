@@ -1,6 +1,5 @@
 import csv
 import numpy as np
-import matplotlib.pyplot as plt
 from collections import defaultdict
 
 # Asking user for CSV filepath
@@ -119,15 +118,6 @@ def do_plot():
     for key, value in business_count.items():
         business_names.append(key)
         business_names_frequency.append(value)
-
-    # Plotting the data
-    plt.bar(business_names,
-            business_names_frequency,
-            color=['lawngreen', 'aquamarine', 'blueviolet',
-                   'fuchsia', 'tomato', 'gold',
-                   'deeppink', 'steelblue', 'sandybrown',
-                   'lime', 'dimgrey', 'olivedrab',
-                   'cadetblue', 'burlywood', 'navy'])
 
     # --------------------------------------------------
     # Question 4 -> Grouped Bar Plot
