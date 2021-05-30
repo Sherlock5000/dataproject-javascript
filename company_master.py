@@ -1,5 +1,6 @@
 import csv
 import numpy as np
+import json
 from collections import defaultdict
 
 # Asking user for CSV filepath
@@ -58,6 +59,7 @@ def do_plot():
             return '10 Cr'
         elif val == 5:
             return '>10Cr'
+
 
     # --------------------------------------------------
     # Question 2 -> Bar Plot of Company Registration by Year
