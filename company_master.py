@@ -60,29 +60,6 @@ def do_plot():
         elif val == 5:
             return '>10Cr'
 
-    # Initializing figure to plot histogram
-    figure, ax = plt.subplots()
-
-    # Plotting histogram
-    plt.hist(frequency,
-             bins=range(6),
-             edgecolor='k',
-             histtype='bar',
-             align='mid',
-             color='skyblue')
-
-    # Setting xticks and customizing values
-    plt.xticks(range(7))
-    ax.xaxis.set_major_formatter(plt.FuncFormatter(xtick_custom))
-
-    # Labelling figure and axes
-    plt.xlabel('Authorized Capital')
-    plt.ylabel('Frequency')
-    plt.title('Authorized Capital vs Frequency')
-
-    # Displaying the plot
-    plt.show()
-
     # --------------------------------------------------
     # Question 2 -> Bar Plot of Company Registration by Year
 
@@ -114,16 +91,6 @@ def do_plot():
     for key, value in year_frequency.items():
         yrs.append(key)
         yrs_frequency.append(value)
-
-    # Setting parameters of the figure
-    plt.xlim(1900, 2025)
-    plt.bar(yrs, yrs_frequency)
-    plt.xlabel('Registration Year')
-    plt.ylabel('Frequency')
-    plt.title('Registration Year vs Frequency')
-
-    # Displaying the plot
-    plt.show()
 
     # --------------------------------------------------
     # Question 3 -> Company Registration in the year 2015 by District
@@ -161,15 +128,6 @@ def do_plot():
                    'deeppink', 'steelblue', 'sandybrown',
                    'lime', 'dimgrey', 'olivedrab',
                    'cadetblue', 'burlywood', 'navy'])
-
-    # Setting plot parameters
-    plt.xlabel('Business Activity')
-    plt.ylabel('Frequency')
-    plt.title('Frequency of Business Activity for 2015')
-    plt.xticks(rotation=90)
-
-    # Dispalying the plot
-    plt.show()
 
     # --------------------------------------------------
     # Question 4 -> Grouped Bar Plot
@@ -242,52 +200,6 @@ def do_plot():
     bar_b = [x + bar_width for x in bar_a]
     bar_c = [x + bar_width for x in bar_b]
     bar_d = [x + bar_width for x in bar_c]
-
-    # Plotting data
-    plt.bar(bar_a,
-            year_2015,
-            color='slateblue',
-            width=bar_width,
-            edgecolor='white',
-            label='2015')
-    plt.bar(bar_b,
-            year_2016,
-            color='springgreen',
-            width=bar_width,
-            edgecolor='white',
-            label='2016')
-    plt.bar(bar_c,
-            year_2017,
-            color='orangered',
-            width=bar_width,
-            edgecolor='white',
-            label='2017')
-    plt.bar(bar_d,
-            year_2018,
-            color='gold',
-            width=bar_width,
-            edgecolor='white',
-            label='2018')
-
-    # Add xticks on the middle of the group bars
-    plt.xlabel('Business activities over the years', fontweight='bold')
-    plt.ylabel('Frequency', fontweight='bold')
-    plt.title('Business Activities over the years vs Frequency')
-
-    plt.xticks([r + bar_width for r in range(len(year_2015))],
-               ['Agriculture', 'Manufacturing', 'Wholesale',
-                'Real Estate', 'Health', 'Mining',
-                'Finance', 'Utility supply', 'Construction',
-                'Social Service', 'Private Household', 'Restaurants',
-                'Transport', 'Public admin.', 'Education'],
-               rotation=45)
-
-    # Create legend
-    plt.legend()
-
-    # Display the plot
-    plt.show()
-
 
 if __name__ == "__main__":
     do_plot()
