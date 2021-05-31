@@ -60,6 +60,19 @@ def do_plot():
         elif val == 5:
             return '>10Cr'
 
+    # /home/anirban/mountblue-project-4/dataproject-javascript/Data_Gov_Maharashtra.CSV
+    dict1 = defaultdict(int)
+    for item in frequency:
+        dict1[item] += 1
+
+    array1 = []
+    for value in dict1.values():
+        array1.append(value)
+
+    jsonPath1 = "data1.json"
+
+    with open(jsonPath1, 'w') as jsonFile:
+        json.dump(array1, jsonFile, indent=4)
 
     # --------------------------------------------------
     # Question 2 -> Bar Plot of Company Registration by Year
