@@ -172,6 +172,7 @@ def do_plot():
     del business[11]
     del business_yearwise_count[11]
 
+
     year_2015 = []
     year_2016 = []
     year_2017 = []
@@ -188,6 +189,14 @@ def do_plot():
                 year_2017.append(value)
             else:
                 year_2018.append(value)
+
+    array4 = [year_2015, year_2016, year_2017, year_2018]
+    
+
+    jsonPath4 = "data4.json"
+
+    with open(jsonPath4, 'w') as jsonFile:
+        json.dump(array4, jsonFile, indent=4)
 
     # Setting width of bar
     # bar_width = 0.15

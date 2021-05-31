@@ -51,7 +51,7 @@ fetch('data3.json')
                     style: {
                         fontSize: '1.5em'
                     }
-                },
+                }
             },
             credits: {
                 enabled: false
