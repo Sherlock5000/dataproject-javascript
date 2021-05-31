@@ -44,22 +44,6 @@ def do_plot():
 
     frequency.sort()
 
-    # Defining function to rename xticklabels as custom values
-    def xtick_custom(val, tick):
-        ''' This function renames xticklabels as custom values '''
-        if val == 0:
-            return 0
-        elif val == 1:
-            return '1L'
-        elif val == 2:
-            return '10L'
-        elif val == 3:
-            return '1Cr'
-        elif val == 4:
-            return '10 Cr'
-        elif val == 5:
-            return '>10Cr'
-
     # /home/anirban/mountblue-project-4/dataproject-javascript/Data_Gov_Maharashtra.CSV
     dict1 = defaultdict(int)
     for item in frequency:
@@ -98,13 +82,21 @@ def do_plot():
     # Sorting dict
     year_frequency = dict(sorted(years_dict.items()))
 
-    yrs = []
+
+    # yrs = []
     yrs_frequency = []
 
     # Unzipping items in 'year_frequency' in lists 'yrs' and 'yrs_frequency'
-    for key, value in year_frequency.items():
-        yrs.append(key)
+    for value in year_frequency.values():
+    #     yrs.append(key)
         yrs_frequency.append(value)
+
+    yrs_frequency = yrs_frequency[-21:-1]
+
+    jsonPath2 = "data2.json"
+
+    with open(jsonPath2, 'w') as jsonFile:
+        json.dump(yrs_frequency, jsonFile, indent=4)
 
     # --------------------------------------------------
     # Question 3 -> Company Registration in the year 2015 by District

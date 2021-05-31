@@ -7,14 +7,49 @@ fetch('data1.json')
                 type: 'column'
             },
             title: {
-                text: 'Auth Frequency'
+                text: 'Histogram of Authorized Capital'
             },
-            
-            yAxis: {
+            xAxis: {
                 title: {
-                    text: 'Frequency'
+                    text: 'Capital Ranges',
+                    style: {
+                        fontSize: "1.5em"
+                    }
+                },
+                categories: [
+                    "<1L",
+                    "1L - 10L",
+                    "10L - 1Cr",
+                    "1Cr - 10Cr",
+                    ">10Cr"
+                ],
+                labels: {
+                    style: {
+                        fontSize: "1.5em"
+                    }
                 }
             },
+            yAxis: {
+                title: {
+                    text: 'Frequency',
+                    style: {
+                        fontSize: "1.5em"
+                    }
+                },
+                labels: {
+                    style: {
+                        fontSize: "1.5em"
+                    }
+                }
+            },
+            credits:{
+                enabled: false
+            },
+            plotOptions: {
+                series: {
+                    color: '#00CC00'
+                }
+            }, 
             series: [
                 {
                     name: 'Authorized Capitals',
