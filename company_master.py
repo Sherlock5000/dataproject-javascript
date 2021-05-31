@@ -82,13 +82,10 @@ def do_plot():
     # Sorting dict
     year_frequency = dict(sorted(years_dict.items()))
 
-
-    # yrs = []
     yrs_frequency = []
 
     # Unzipping items in 'year_frequency' in lists 'yrs' and 'yrs_frequency'
     for value in year_frequency.values():
-    #     yrs.append(key)
         yrs_frequency.append(value)
 
     yrs_frequency = yrs_frequency[-21:-1]
@@ -118,13 +115,16 @@ def do_plot():
             if registration_year == 2015:
                 business_count[activity[i]] += 1
 
-    business_names = []
     business_names_frequency = []
 
     # Unzipping items in 'business_count' in the lists above
-    for key, value in business_count.items():
-        business_names.append(key)
+    for value in business_count.values():
         business_names_frequency.append(value)
+
+    jsonPath3 = "data3.json"
+
+    with open(jsonPath3, 'w') as jsonFile:
+        json.dump(business_names_frequency, jsonFile, indent=4)
 
     # --------------------------------------------------
     # Question 4 -> Grouped Bar Plot
@@ -190,13 +190,13 @@ def do_plot():
                 year_2018.append(value)
 
     # Setting width of bar
-    bar_width = 0.15
+    # bar_width = 0.15
 
     # Setting the parameters of the bars
-    bar_a = np.arange(len(year_2015))
-    bar_b = [x + bar_width for x in bar_a]
-    bar_c = [x + bar_width for x in bar_b]
-    bar_d = [x + bar_width for x in bar_c]
+    # bar_a = np.arange(len(year_2015))
+    # bar_b = [x + bar_width for x in bar_a]
+    # bar_c = [x + bar_width for x in bar_b]
+    # bar_d = [x + bar_width for x in bar_c]
 
 if __name__ == "__main__":
     do_plot()
