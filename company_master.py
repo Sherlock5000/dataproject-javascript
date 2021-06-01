@@ -48,12 +48,14 @@ def do_plot():
     for item in frequency:
         dict1[item] += 1
 
+    # Creating array to store JSON
     array1 = []
     for value in dict1.values():
         array1.append(value)
 
     jsonPath1 = "data1.json"
 
+    # Dumping data to JSON
     with open(jsonPath1, 'w') as jsonFile:
         json.dump(array1, jsonFile, indent=4)
 
@@ -87,10 +89,12 @@ def do_plot():
     for value in year_frequency.values():
         yrs_frequency.append(value)
 
+    # Selecting particular time period
     yrs_frequency = yrs_frequency[-21:-1]
 
     jsonPath2 = "data2.json"
 
+    # Dumping data to JSON
     with open(jsonPath2, 'w') as jsonFile:
         json.dump(yrs_frequency, jsonFile, indent=4)
 
@@ -122,6 +126,7 @@ def do_plot():
 
     jsonPath3 = "data3.json"
 
+    # Dumping data to JSON
     with open(jsonPath3, 'w') as jsonFile:
         json.dump(business_names_frequency, jsonFile, indent=4)
 
@@ -158,19 +163,18 @@ def do_plot():
             else:
                 activity_freq_year[activity[i]][registration_year] += 1
 
-    business = []
+    # business = []
     business_yearwise_count = []
 
     # Unzipping items in dict in lists 'business' and 'business_yearwise_count'
-    for key, value in activity_freq_year.items():
-        business.append(key)
+    for value in activity_freq_year.values():
+        # business.append(key)
         business_yearwise_count.append(value)
 
-    # Deleting item at index 11 in the lists
+    # Deleting item at index 11 in the list
     # That item is outlier with only two items in inner dict
-    del business[11]
+    # del business[11]
     del business_yearwise_count[11]
-
 
     year_2015 = []
     year_2016 = []
@@ -189,11 +193,12 @@ def do_plot():
             else:
                 year_2018.append(value)
 
+    # Creating array to store JSON
     array4 = [year_2015, year_2016, year_2017, year_2018]
-    
 
     jsonPath4 = "data4.json"
 
+    # Dumping data to JSON
     with open(jsonPath4, 'w') as jsonFile:
         json.dump(array4, jsonFile, indent=4)
 
