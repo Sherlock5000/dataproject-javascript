@@ -1,5 +1,4 @@
 import csv
-import numpy as np
 import json
 from collections import defaultdict
 
@@ -198,14 +197,6 @@ def do_plot():
     with open(jsonPath4, 'w') as jsonFile:
         json.dump(array4, jsonFile, indent=4)
 
-    # Setting width of bar
-    # bar_width = 0.15
-
-    # Setting the parameters of the bars
-    # bar_a = np.arange(len(year_2015))
-    # bar_b = [x + bar_width for x in bar_a]
-    # bar_c = [x + bar_width for x in bar_b]
-    # bar_d = [x + bar_width for x in bar_c]
 
 if __name__ == "__main__":
     do_plot()
