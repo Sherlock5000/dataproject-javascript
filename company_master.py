@@ -43,7 +43,6 @@ def do_plot():
 
     frequency.sort()
 
-    # /home/anirban/mountblue-project-4/dataproject-javascript/Data_Gov_Maharashtra.CSV
     dict1 = defaultdict(int)
     for item in frequency:
         dict1[item] += 1
@@ -163,17 +162,14 @@ def do_plot():
             else:
                 activity_freq_year[activity[i]][registration_year] += 1
 
-    # business = []
     business_yearwise_count = []
 
     # Unzipping items in dict in lists 'business' and 'business_yearwise_count'
     for value in activity_freq_year.values():
-        # business.append(key)
         business_yearwise_count.append(value)
 
     # Deleting item at index 11 in the list
     # That item is outlier with only two items in inner dict
-    # del business[11]
     del business_yearwise_count[11]
 
     year_2015 = []
